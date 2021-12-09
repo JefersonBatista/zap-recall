@@ -28,6 +28,9 @@
   margin: 20px auto;
 
   border: 3px solid #ffef61;
+  background-color: white;
+
+  cursor: pointer;
 }
 
 .deck-option .title {
