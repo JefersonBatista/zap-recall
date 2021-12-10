@@ -1,0 +1,38 @@
+.flashcard {
+  position: relative;
+
+  display: flex;
+
+  margin: auto;
+
+  width: 392px;
+  height: 576px;
+
+  background-color: lightgray;
+}
+
+.flashcard .card-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.flashcard .question {
+  margin: auto;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.flashcard .turn-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

@@ -4,7 +4,7 @@ import "./style.css";
 
 import logo from "../../assets/logo.png";
 
-export default function Home() {
+export default function Home({ goToPage }) {
   const decks = [{ title: "Praticar JavaScript" }, { title: "Praticar React" }];
 
   return (
@@ -15,7 +15,7 @@ export default function Home() {
 
       <section className="decks">
         {decks.map((deck, index) => (
-          <DeckOption key={index} title={deck.title} />
+          <DeckOption key={index} title={deck.title} goToPage={goToPage} />
         ))}
       </section>
     </div>
