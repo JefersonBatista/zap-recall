@@ -59,6 +59,45 @@ export default function App() {
         },
       ],
     },
+    {
+      title: "Praticar React",
+      content: [
+        {
+          question: "O que é JSX?",
+          answer: "Uma extensão da linguagem JavaScript.",
+        },
+        {
+          question: "O React é ...",
+          answer: "Uma biblioteca JavaScript para a construção de interfaces.",
+        },
+        {
+          question: "Nomes de componentes devem iniciar com ...",
+          answer: "Letra maiúscula.",
+        },
+        {
+          question: "Podemos colocar ... dentro do JSX.",
+          answer: "Expressões.",
+        },
+        {
+          question: "O ReactDOM nos ajuda ...",
+          answer:
+            "Interagindo com a DOM para colocar componentes do React nela.",
+        },
+        {
+          question: "Usamos o npm para ...",
+          answer: "Gerenciar os pacotes necessários e suas dependências.",
+        },
+        {
+          question: "Usamos props para ...",
+          answer: "Passar diferentes informações para componentes.",
+        },
+        {
+          question: "No React, usamos estado para ...",
+          answer:
+            "Dizer para o React quais informações quando modificadas devem renderizar a tela novamente.",
+        },
+      ],
+    },
   ];
 
   const [location, setLocation] = useState("home");

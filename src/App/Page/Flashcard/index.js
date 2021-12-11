@@ -11,24 +11,45 @@ export default function Flashcard({
   cardQuantity,
   goToNext,
 }) {
-  const [flipped, setFlipped] = useState(false);
+  const [face, setFace] = useState("back");
 
   function handleTurn() {
-    if (flipped) {
+    if (face === "front") {
       goToNext();
-      setFlipped(false);
+      setFace("back");
     } else {
-      setFlipped(true);
+      setFace("front");
     }
   }
 
   return (
-    <div className="flashcard">
-      <span className="card-number">
-        {cardNumber}/{cardQuantity}
-      </span>
-      <p className="text">{flipped ? answer : question}</p>
-      <img className="turn-icon" src={turn} alt="Virar" onClick={handleTurn} />
+    <div className={`flashcard ${face}`}>
+      <div className="back-face face">
+        <span className="card-number">
+          {cardNumber}/{cardQuantity}
+        </span>
+        <p className="question">{question}</p>
+        <img
+          className="turn-icon"
+          src={turn}
+          alt="Virar"
+          onClick={handleTurn}
+        />
+      </div>
+
+      <div className="front-face face">
+        <span className="card-number">
+          {cardNumber}/{cardQuantity}
+        </span>
+        <p className="question">{question}</p>
+        <p className="answer">{answer}</p>
+        <img
+          className="turn-icon"
+          src={turn}
+          alt="Virar"
+          onClick={handleTurn}
+        />
+      </div>
     </div>
   );
 }
