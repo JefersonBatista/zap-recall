@@ -6,22 +6,15 @@ import "./style.css";
 
 import miniLogo from "../../assets/logo-mini.png";
 
-export default function Page() {
+export default function Page({ deck }) {
   const [cardNumber, setCardNumber] = useState(1);
 
-  const questions = [
-    "O que é HTML?",
-    "O que é CSS?",
-    "O que é JavaScript?",
-    "Como a internet funciona?",
-    "O que é React?",
-  ];
-
-  const flashcards = questions.map((question) => (
+  const flashcards = deck.content.map((card) => (
     <Flashcard
-      question={question}
+      question={card.question}
+      answer={card.answer}
       cardNumber={cardNumber}
-      cardQuantity={questions.length}
+      cardQuantity={deck.content.length}
       goToNext={() => setCardNumber(cardNumber + 1)}
     />
   ));
