@@ -117,7 +117,7 @@ export default function App() {
           }}
         />
       ) : (
-        <Deck deck={decks[deckIndex]} />
+        <Deck deck={decks[deckIndex]} goBackHome={() => setLocation("home")} />
       )}
     </div>
   );

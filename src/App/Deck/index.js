@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Flashcard from "./Flashcard";
+import Button from "../../components/Button";
 
 import "./style.css";
 
@@ -8,7 +9,7 @@ import miniLogo from "../../assets/logo-mini.png";
 import party from "../../assets/party.png";
 import sad from "../../assets/sad.png";
 
-export default function Deck({ deck }) {
+export default function Deck({ deck, goBackHome }) {
   const [cardNumber, setCardNumber] = useState(1);
   const [incorrectCounter, setIncorrectCounter] = useState(0);
   const [finalized, setFinalized] = useState(false);
@@ -44,9 +45,12 @@ export default function Deck({ deck }) {
         <h1 className="title">{deck.title}</h1>
         {finalized ? (
           success ? (
-            <SuccessPainel />
+            <SuccessPainel goBackHome={goBackHome} />
           ) : (
-            <FailurePainel incorrectCounter={incorrectCounter} />
+            <FailurePainel
+              incorrectCounter={incorrectCounter}
+              goBackHome={goBackHome}
+            />
           )
         ) : (
           flashcards[cardNumber - 1]
@@ -56,7 +60,7 @@ export default function Deck({ deck }) {
   );
 }
 
-function SuccessPainel() {
+function SuccessPainel({ goBackHome }) {
   return (
     <div className="success-painel painel">
       <div className="congratulations">
@@ -64,11 +68,16 @@ function SuccessPainel() {
         <img className="emoticon" src={party} alt="Party" />
       </div>
       <p className="message">Você não esqueceu de nenhum flashcard!</p>
+      <Button
+        identifier="restart"
+        text="Tentar novamente"
+        action={goBackHome}
+      />
     </div>
   );
 }
 
-function FailurePainel({ incorrectCounter }) {
+function FailurePainel({ incorrectCounter, goBackHome }) {
   return (
     <div className="failure-painel painel">
       <div className="lament">
@@ -80,6 +89,11 @@ function FailurePainel({ incorrectCounter }) {
         <br />
         Não desanime! Na próxima você consegue!
       </p>
+      <Button
+        identifier="restart"
+        text="Tentar novamente"
+        action={goBackHome}
+      />
     </div>
   );
 }
