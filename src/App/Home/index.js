@@ -4,7 +4,7 @@ import "./style.css";
 
 import logo from "../../assets/logo.png";
 
-export default function Home({ decks, goToPage }) {
+export default function Home({ decks, goToDeck }) {
   return (
     <div className="home">
       <header className="header">
@@ -16,7 +16,7 @@ export default function Home({ decks, goToPage }) {
           <DeckOption
             key={index}
             title={deck}
-            goToPage={() => goToPage(index)}
+            goToDeck={() => goToDeck(index)}
           />
         ))}
       </section>

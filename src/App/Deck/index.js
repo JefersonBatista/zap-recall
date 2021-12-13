@@ -6,7 +6,7 @@ import "./style.css";
 
 import miniLogo from "../../assets/logo-mini.png";
 
-export default function Page({ deck }) {
+export default function Deck({ deck }) {
   const [cardNumber, setCardNumber] = useState(1);
 
   const flashcards = deck.content.map((card) => (
@@ -20,10 +20,11 @@ export default function Page({ deck }) {
   ));
 
   return (
-    <div className="page">
+    <div className="deck">
       <header className="header">
         <img src={miniLogo} alt="Mini Logo" />
       </header>
+      <h1 className="title">{deck.title}</h1>
       {flashcards[cardNumber - 1]}
     </div>
   );

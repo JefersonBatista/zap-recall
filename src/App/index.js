@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Home from "./Home";
-import Page from "./Page";
+import Deck from "./Deck";
 
 import "./style.css";
 
 export default function App() {
   const decks = [
     {
-      title: "Praticar questões técnicas",
+      title: "Desenvolvimento Web",
+      label: "Perguntas técnicas de desenvolvimento Web",
       content: [
         {
           question: "O que é HTML?",
@@ -34,7 +35,8 @@ export default function App() {
       ],
     },
     {
-      title: "Praticar questões comportamentais",
+      title: "Questões comportamentais",
+      label: "Praticar questões comportamentais",
       content: [
         {
           question: "Quando paramos de aprender?",
@@ -60,7 +62,8 @@ export default function App() {
       ],
     },
     {
-      title: "Praticar React",
+      title: "React",
+      label: "Praticar React",
       content: [
         {
           question: "O que é JSX?",
@@ -107,14 +110,14 @@ export default function App() {
     <div className="app">
       {location === "home" ? (
         <Home
-          decks={decks.map((deck) => deck.title)}
-          goToPage={(deckIndex) => {
-            setLocation("page");
+          decks={decks.map((deck) => deck.label)}
+          goToDeck={(deckIndex) => {
+            setLocation("deck");
             setDeckIndex(deckIndex);
           }}
         />
       ) : (
-        <Page deck={decks[deckIndex]} />
+        <Deck deck={decks[deckIndex]} />
       )}
     </div>
   );

@@ -2,12 +2,12 @@ import "./style.css";
 
 import next from "../../../assets/next.png";
 
-export default function DeckOption({ title, goToPage }) {
+export default function DeckOption({ title, goToDeck }) {
   return (
     <button
       className="deck-option"
       data-identifier="start-zap-recall"
-      onClick={goToPage}
+      onClick={goToDeck}
     >
       <div className="title">
         <span>{title}</span>

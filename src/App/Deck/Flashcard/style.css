@@ -4,7 +4,7 @@
   margin: auto;
 
   width: 392px;
-  height: 576px;
+  height: 75vh;
 }
 
 .flashcard .face {
@@ -22,6 +22,22 @@
 
   backface-visibility: hidden;
   transform-style: preserve-3d;
+}
+
+.flashcard.neutral .front-face {
+  border: 5px solid black;
+}
+
+.flashcard.incorrect .front-face {
+  border: 5px solid #f64848;
+}
+
+.flashcard.correct .front-face {
+  border: 5px solid #62db38;
+}
+
+.flashcard.zap .front-face {
+  border: 5px solid #ffef61;
 }
 
 .flashcard.front .face {
@@ -78,6 +94,57 @@
   font-weight: normal;
   font-size: 16px;
   text-align: center;
+}
+
+.flashcard > .front-face .feedbacks {
+  position: absolute;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin: auto 20px;
+
+  width: 310px;
+  height: 50px;
+}
+
+.flashcard > .front-face .feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 65px;
+  height: 100%;
+  padding: 3px;
+
+  border-radius: 12px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.flashcard > .front-face .neutral {
+  border: 3px solid black;
+}
+
+.flashcard > .front-face .incorrect {
+  border: 3px solid #f64848;
+}
+
+.flashcard > .front-face .correct {
+  border: 3px solid #62db38;
+}
+
+.flashcard > .front-face .zap {
+  border: 3px solid #ffef61;
+
+  font-weight: bold;
 }
 
 .flashcard .turn-icon {

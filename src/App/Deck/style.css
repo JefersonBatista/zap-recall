@@ -1,0 +1,27 @@
+.deck {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.deck .header {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  width: 100px;
+}
+
+.deck .title {
+  position: absolute;
+  top: 25px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+}
