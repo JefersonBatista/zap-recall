@@ -1,4 +1,4 @@
-import DeckOption from "./DeckOption";
+import Button from "../../components/Button";
 
 import "./style.css";
 
@@ -13,10 +13,11 @@ export default function Home({ decks, goToDeck }) {
 
       <section className="decks">
         {decks.map((deck, index) => (
-          <DeckOption
+          <Button
             key={index}
-            title={deck}
-            goToDeck={() => goToDeck(index)}
+            identifier="start-zap-recall"
+            text={deck}
+            action={() => goToDeck(index)}
           />
         ))}
       </section>

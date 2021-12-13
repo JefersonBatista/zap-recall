@@ -1,27 +1,75 @@
 .deck {
-  position: relative;
-
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
   width: 100vw;
   min-height: 100vh;
 }
 
 .deck .header {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  height: 70px;
+}
 
-  width: 100px;
+.deck .mini-logo {
+  padding: 10px 0;
+
+  height: 100%;
+}
+
+.deck .container {
+  display: flex;
+  flex-direction: column;
+
+  height: calc(100vh - 70px);
 }
 
 .deck .title {
-  position: absolute;
-  top: 25px;
+  margin: 0 auto;
 
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
+}
+
+.deck .painel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deck .success-painel {
+  margin: auto;
+}
+
+.deck .congratulations {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.deck .failure-painel {
+  margin: auto;
+}
+
+.deck .lament {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.deck .painel .message {
+  margin: 16px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  text-align: center;
+}
+
+.deck .painel .emoticon {
+  margin: 0 10px;
 }

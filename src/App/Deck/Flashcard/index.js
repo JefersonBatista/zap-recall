@@ -9,6 +9,7 @@ export default function Flashcard({
   answer,
   cardNumber,
   cardQuantity,
+  someIncorrect,
   goToNext,
 }) {
   const [face, setFace] = useState("back");
@@ -75,6 +76,7 @@ export default function Flashcard({
               onClick={() => {
                 setAnswered(true);
                 setFeedback("incorrect");
+                someIncorrect();
               }}
             >
               Não lembrei
