@@ -19,6 +19,7 @@ export default function Deck({ deck, goBackHome }) {
 
   const flashcards = deck.content.map((card) => (
     <Flashcard
+      key={cardNumber}
       question={card.question}
       answer={card.answer}
       cardNumber={cardNumber}
@@ -85,7 +86,9 @@ function FailurePainel({ incorrectCounter, goBackHome }) {
         <img className="emoticon" src={sad} alt="Sad" />
       </div>
       <p className="message">
-        Você esqueceu {incorrectCounter} flashcards..
+        {`Você esqueceu ${incorrectCounter} flashcard${
+          incorrectCounter > 1 ? "s" : ""
+        }..`}
         <br />
         Não desanime! Na próxima você consegue!
       </p>

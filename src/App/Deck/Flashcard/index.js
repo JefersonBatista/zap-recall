@@ -19,9 +19,6 @@ export default function Flashcard({
   function handleTurn() {
     if (face === "front") {
       goToNext();
-      setAnswered(false);
-      setFeedback("");
-      setFace("back");
     } else {
       setFace("front");
     }
